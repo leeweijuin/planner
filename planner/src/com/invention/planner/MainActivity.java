@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	/** Called when the user clicks the add item button*/
-	public void openAddItemV(View view) {
+	public void openAddItem(View view) {
 	    // Do something in response to button
 		Intent intent = new Intent(this, AddItemActivity.class);
 		startActivity(intent);
