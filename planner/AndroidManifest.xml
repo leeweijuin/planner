@@ -11,25 +11,39 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:logo="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:uiOptions="splitActionBarWhenNarrow" >"
         <activity
             android:name="com.invention.planner.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
         </activity>
         <activity
-            android:name="com.invention.planner.AddItemActivity"
-            android:label="@string/title_activity_add_item"
-            android:parentActivityName="com.invention.planner.MainActivity" >
+            android:name="com.invention.planner.TaskEdit"
+            android:label="@string/title_taskEdit"
+            android:parentActivityName="com.invention.planner.TaskListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.invention.planner.TaskListActivity" />
+        	<meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
+        <fragment
+            android:name="com.invention.planner.TaskListFragment"
+            android:parentActivityName="com.invention.planner.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.invention.planner.MainActivity" />
-        </activity>
+        </fragment>
     </application>
 
 </manifest>
